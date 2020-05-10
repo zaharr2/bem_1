@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BEM</title>
+</head>
+<body>
+<!--  БЭМ  -->
+<!--  Блок Элемент Модификатор  -->
+<div class="page-header__logo"></div>
+<div class="header__logo"></div>
+<div class="logo"></div>
+
+<!--  Блок__Элемент--модификатор (международная)  -->
+<div class="list__item--active"></div>
+
+<!--  Блок__Элемент_модификатор (яндекс)  -->
+<div class="list__item_active"></div>
+
+<!--  Блок - независимый компонент, название блока характеризует смысл "что это?"  -->
+<!--  Блокам нельзя вешать внешние отступы, на элемент - можно  -->
+
+<!--  Верно  "что это?"  -->
+<div class="logo"></div>
+<div class="menu"></div>
+<div class="error"></div>
+
+<!--  Не верно  "какой?"  -->
+<div class="big-item"></div>
+<div class="red-text"></div>
+
+<!--  Принцип работы с блоками  -->
+<header class="header">
+  <div class="logo"></div>
+  <nav class="menu"></nav>
+</header>
+
+<!--  Элемент - Составная часть блока, которая не может использоваться в отрыве от него. Название элемента характеризует смысл "что это?"  -->
+<header class="header">
+  <div class="header__logo"></div>
+  <div class="header__menu"></div>
+</header>
+
+<form action="" class="search-form">
+  <input type="text" class="search-form__input">
+  <button class="search-form__button">Найти</button>
+</form>
+
+<!--  Вложенность  -->
+
+<!--  Верно  -->
+<div class="about">
+  <div class="about__inner">
+    <div class="about__items"></div>
+  </div>
+</div>
+
+<!--  или  -->
+<div class="about">
+  <div class="about__inner">
+    <div class="about__inner-items"></div>
+  </div>
+</div>
+
+<!--  Не верно  -->
+<div class="about">
+  <div class="about__inner">
+    <div class="about__inner_items"></div>
+  </div>
+</div>
+
+<!--  Важный принцип вложенности  -->
+
+<!--  Пример  -->
+<div class="block">
+  <div class="block__elem1">
+    <div class="block__elem2">
+      <div class="block__elem3"></div>
+    </div>
+  </div>
+</div>
+
+<div class="block">
+  <div class="block__elem1">
+    <div class="block__elem2"></div>
+  </div>
+  <div class="block__elem3"></div>
+</div>
+
+<!--  Элемент - необязательный компонент блока. не у всех блоков должны быть элементы.  -->
+
+<!--  Модификаторы  -->
+<!--  Сущность, определяющая внешний вид, состояние или поведение блока либо елемента.  -->
+<!--  Название модификатора характеризует внешний вид "какой размер?", "какая тема?".  -->
+<!--  active или size--lg  -->
+
+<!--  Типы модификаторов  -->
+
+<!--  Булевый  -->
+<!--  Используют, когда важно только наличие или отсутствие модификатора  -->
+<!--  active  -->
+<!--  disable  -->
+<!--  focused  -->
+
+<!--  Ключ-значение  -->
+<!--  Используют когда важно значение модификатора  -->
+<!--  size--lg  -->
+<!--  theme--space  -->
+<!--  theme--winter  -->
+
+<!--  Структура полного имени модификатора соответствует схеме:  -->
+<!--  имя-блока--значение-модификатора  -->
+<!--  имя-блока--имя-модификатора--значение-модификатора  -->
+<!--  имя-блока--имя-элемента--имя-модификатора--значение-модификатора  -->
+
+<!--  Модификаторы нельзя использовать самостоятельно  -->
+
+<!--  Микс  -->
+<!--  Прием позволяющий использовать разные БЭМ-сущности на одном DOM-узле  -->
+<div class="search-form header__search-form"></div>
+
+<!--    -->
+<!--    -->
+
+</body>
+</html>
